@@ -3,8 +3,8 @@ class Person
   # in as arguments when initialized.
   attr_accessor :name, :birthday, :hair_color, :eye_color, :height, :weight, :handed, :complexion, :t_shirt_size, :wrist_size, :glove_size, :pant_length, :pant_width
 
-  # Next we want to make the argument for initialize accept any number of the
-  # included attributes we listed above (attributes).
+  # Next we want to make the argument for initialize accept an object of
+  # attributes with values (see bottom of page).
   def initialize(attributes)
     # If any attributes are listed as arguments....
     if attributes
@@ -31,3 +31,18 @@ end
 #     (same as)
 # sophie = User.new
 # sophie.send("name=", "Sophie")
+
+##############################################################################
+# Example Program Use #
+# bob_attributes = {name: "Bob", hair_color: "Brown"}
+#
+# bob = Person.new(bob_attributes)
+# bob.name       # => "Bob"
+# bob.hair_color # => "Brown"
+#
+# susan_attributes = {name: "Susan", height: "5'11\"", eye_color: "Green"}
+#
+# susan = Person.new(susan_attributes)
+# susan.name      # => "Susan"
+# susan.height    # => "5'11""
+# susan.eye_color # => "Green"
